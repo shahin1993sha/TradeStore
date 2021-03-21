@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Trade Store List</title>
+</head>
+<body>
+
+
+	<div align="center">
+		<h1>Trade Store</h1>
+		
+		<br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Trade ID</th>
+					<th>Version</th>
+					<th>Counter-Party Id</th>
+					<th>Book-Id</th>
+					<th>Maturity Date</th>
+					<th>Created Date</th>
+					<th>Expired</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="trade : ${listOfTrades}">
+					<td th:text="${trade.tradeId}">Product ID</td>
+					<td th:text="${trade.version}">Version</td>
+					<td th:text="${trade.counterPartyId}">Counter-Party Id</td>
+					<td th:text="${trade.bookId}">Book-Id</td>
+					<td th:text="${trade.maturityDate}">Maturity Date</td>
+					<td th:text="${trade.createdDate}">Created Date</td>
+					<td th:text="${trade.expired}">Expired</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+  			<a href="/new">New Trade</a> <br />
+	</div>
+
+</body>
+</html>
